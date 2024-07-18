@@ -37,7 +37,7 @@ class GandalfTarget(PromptTarget):
     ) -> None:
         self._memory = memory if memory else DuckDBMemory()
 
-        self._endpoint = "http://192.168.1.3:4000/api/send-message"
+        self._endpoint = "http://host.docker.internal:4000/api/send-message"
         self._defender = level.value
 
     async def send_prompt_async(self, *, prompt_request: PromptRequestResponse) -> PromptRequestResponse:
